@@ -1,3 +1,32 @@
+#ROBERT CHANGE LOG 6/17/17
+#todo - Add "Secret!" source to all secret chems so people don't think it's unobtainable + add hints provided by Wiki
+#Finished doing that ^^^
+#
+#Add chicken soup - From vendors
+#Add Filgrastim - Blood + Stable Mutagen + Spaceacillin + E.Coli OR Medical Vendors
+#Add Heparin - Sugar + Meat Slurry + Phenol + Sulfuric Acid OR Medical Vendors
+#Add Mugwort Tea - Wizard Shuttles
+#Add Proconvertin - Blood + Stable Mutagen + Mannitol + Salt OR Medical Vendors
+#Change Venom - Add insect stings to sources
+#Add E.Coli - Compost + Bacterial Medium
+#Change Fluorosulfuric Acid to fluorosulfuric acid as it is in-game
+#Change Sulfuric Acid to Sulfuric acid as it is in-game
+#Add Silver Fulminate - Secret!
+#Add Luminol - Oxygen + Hydrogen + Nitrogen + Carbon OR Detective's spray gun
+#Add Anima - Secret!
+#Add Booster Enzyme - Secret!
+#Add Enriched MSG - Secret!
+#Add Fermid - Secret!
+#Add Triple Meth - Secret!
+#Add Rotting - Secret!
+#Add Voltagen - Secret!
+#Add Energy Drink - Secret!
+#Add Nitroglycerin - Secret!
+#Add Quark-gluon Plasma - Secret!
+#Add Glowing Fliptonium - Secret!
+#
+#Description after this line is untouched.
+# =====================================================================
 # List of all public chemistry recipes for mysha's recipe manager.
 # Adapted from: "Chemistry" on the Goonstation Wiki (various contributors)
 # Compiled by: mysha, cogwerks, Marquesas, Convair880/Pistoleer
@@ -12,6 +41,7 @@
 # - Drugs
 # - Miscellaneous recipes
 # - Miscellaneous reagents
+# - Secret Chems
 #
 # Special tags:
 # [addictive] It's addictive.
@@ -54,6 +84,7 @@
 # [paralyze] Causes paralysis.
 # [plant] Affects plants in some way when present in a hydroponics tray.
 # [rad] Causes or heals radiation poisoning.
+# [secret] Is a secret chemical.
 # [slippery] Creates a slippery surface when applied to a floor tile.
 # [speed] Grants a speed boost.
 # [stamina] Affects stamina in some way.
@@ -478,7 +509,7 @@ recipes:
     ingredients:
       - Potassium
       - Chlorine
-      - Sulphuric acid
+      - Sulfuric Acid
     reaction_message: A white crystalline residue forms as the water boils off.
     info:
       depletion_rate: 0.4
@@ -554,6 +585,64 @@ recipes:
       per_cycle: -1.5 TOX. 50% chance of increasing the depletion rate of all other chems by 1
       Per plant cycle: Removes 2 units of every harmful chem present (toxin, toxic slurry, sulf. acid, plasma, mercury, welding fuel, chlorine, radium)
 
+  - name: Filgrastim
+    ingredients:
+      - Blood
+      - Stable Mutagen
+      - Spaceacillin
+      - E.Coli
+    sources:
+      - Medical vendors
+    tags: [medical, heal, bleeding]
+    info:
+      notes: A granulocyte colony stimulating factor analog, which helps the body create more blood.
+      depletion_rate: 0.2
+      penetrates_skin: No
+      per_cycle: +2u blood.
+
+  - name: Heparin
+    ingredients:
+      - Sugar
+      - Meat Slurry
+      - Phenol
+      - Sulfuric Acid
+    sources:
+      - Medical vendors
+    tags: [medical, disease, bleeding, overdose]
+    info:
+      notes: An anticoagulant.
+      depletion_rate: 0.4
+      penetrates_skin: No
+      per_cycle: |
+                 Will cause any bleeding to become worse, but will try to cure heart disease, dislodge blood clots, and will reduce the effects of hypertension. Removes 2u of cholesterol as well.
+                 
+                 OVERDOSE (20) - you blood fall out
+  - name: Proconvertin
+    ingredients:
+      - Blood
+      - Stable Mutagen
+      - Mannitol
+      - Salt
+    sources:
+      - Medical vendors
+    tags: [medical, bleeding]
+    info:
+      notes: A coagulant.
+      depletion_rate: 0.3
+      penetrates_skin: No
+      per_cycle: 5% chance of -1 BLEEDING. 2% chance to cause a blood clot. Increases blood pressure and can worsen existing blood clots.
+
+  - name: Mugwort
+    sources:
+      - Wizard shuttle
+    tags: [medical, heal, brute, oxy, tox, burn]
+    info:
+      notes: Can patch up minor injuries of magic users. 
+      depletion_rate: 0.4
+      penetrates_skin: No
+      application_effect: |
+                          INGEST - If target is wizard: 85% chance of -1 LOSEBREATH. 45% chances for each of -1 OXY, -1 TOX, -6 BRUTE and -6 BURN.
+
   - name: Saline-Glucose Solution
     ingredients:
       - Salt
@@ -572,7 +661,7 @@ recipes:
       - Aluminium 
       - Hydrogen 
       - Oxygen 
-      - Sulphuric Acid
+      - Sulfuric Acid
     tags: [medical, brute, heal, tox, damage, bleeding]
     reaction_message: The solution yields an astringent powder.
     info:
@@ -761,7 +850,7 @@ recipes:
       - Acetone 
       - Diethylamine
       - Phenol
-      - Sulphuric Acid
+      - Sulfuric Acid
     reaction_message: A horrid smell like something died drifts from the mixture.
     sources:
       - Extracted from black venne fibers. 
@@ -789,7 +878,7 @@ recipes:
       - Phenol 
       - Carbon 
       - Oxygen 
-      - Sulphuric Acid
+      - Sulfuric Acid
     reaction_message: The mixture crystallizes.
     sources:
       - Extracted from all contusine leaves.
@@ -1161,6 +1250,7 @@ recipes:
     tags: [damage, tox, brute, allergy, gib]
     sources:
       - Poison bottles.
+      - Insect stings.
     info:
       depletion_rate: 0.2
       penetrates_skin: No
@@ -1418,6 +1508,19 @@ recipes:
       Units to infect (adjusted): 2.9
       notes: Infects the victim with a non-contagious version of GBS. Another evil disease reagent. Unless countered quickly with cryoxadone, death is inevitable and permanent without a backup copy of the victim's DNA.
 
+  - name: E.Coli
+    ingredients: 
+      - Compost
+      - Bacterial Medium
+    sources:
+      - Poison bottles.
+    tags: [disease]
+    info:
+      penetrates_skin: No
+      depletion_rate: 0.4
+      Units to infect (adjusted): 4.9
+      notes: Food poisoning is annoying, but not very dangerous. You can sleep it off or drink some chicken soup.
+
   - name: Spider eggs
     sources:
       - Poison bottles.
@@ -1470,7 +1573,7 @@ recipes:
     sources:
       - Poison bottles.
     reaction_message: The mixture forms a clear greenish liquid, emitting a nauseating smell reminiscent of chlorophyll and rubbing alcohol.
-    tags: [damage, brain, jitter, drowsiness, stamina, ko, movement]
+    tags: [damage, brain, jitter, drowsiness, stamina, ko, movement, secret]
     info:
       penetrates_skin: No
       depletion_rate: 0.1
@@ -1766,7 +1869,7 @@ recipes:
       Per plant cycle: +1 ACID
       notes: It's basically raw vinegar. Behaves like a much weaker sulfuric acid.
 
-  - name: Sulphuric Acid
+  - name: Sulfuric Acid
     ingredients: 
       - Sulfur 
       - Hydrogen 
@@ -1795,7 +1898,7 @@ recipes:
     info:
       depletion_rate: 0.4
       penetrates_skin: No
-      notes: Behaves exactly the same as sulphuric acid.
+      notes: Behaves exactly the same as Sulfuric Acid.
 
   - name: Nitric Acid
     ingredients: 
@@ -1806,11 +1909,11 @@ recipes:
     info:
       depletion_rate: 0.4
       penetrates_skin: No
-      notes: Behaves exactly the same as sulphuric acid.
+      notes: Behaves exactly the same as Sulfuric Acid.
 
-  - name: Fluorosulphuric Acid
+  - name: Fluorosulfuric Acid
     ingredients: 
-      - Sulphuric Acid 
+      - Sulfuric Acid 
       - Fluorine 
       - Hydrogen 
       - Potassium 
@@ -1914,7 +2017,7 @@ recipes:
       - Extracted from burning commol roots.
     ingredients:
       - Phosphorous 
-      - Sulphuric Acid 
+      - Sulfuric Acid 
       - Plasma 
       - Stabilizing agent (Stabilizer)
     reaction_message: The substance becomes sticky and extremely warm.
@@ -2002,7 +2105,7 @@ recipes:
     ingredients:
       - Fluorine
       - Carbon
-      - Sulphuric Acid
+      - Sulfuric Acid
       - !step Activate with water.
     reaction_message: A head of foam results from the mixture's constant fizzing. / The mixture quickly and violently erupts into bubbles!
     tags: [slippery]
@@ -2341,7 +2444,7 @@ recipes:
       - Diphenhydramine (Antihistamine)
       - Ammonia 
       - Lithium 
-      - Sulphuric Acid 
+      - Sulfuric Acid 
       - Welding Fuel 
       - !step Heat to 374 K.
     heat_to: Heat to 374 K
@@ -2482,7 +2585,7 @@ recipes:
   - name: Corn Syrup
     ingredients:
       - Corn starch 
-      - Sulphuric Acid
+      - Sulfuric Acid
       - !step Heat to 374 K.
     heat_to: Heat to 374 K.
     reaction_message: The mixture forms a viscous, clear fluid!
@@ -2551,7 +2654,7 @@ recipes:
     unsorted: true
     ingredients:
       - Fluorosurfactant
-      - Sulphuric acid
+      - Sulfuric Acid
       - <Aluminium> OR <Iron>
     reaction_message: The metal begins to foam up! / The metal begins to foam up, becoming rigid and tough!
     tags: [floor, wall]
@@ -2735,6 +2838,17 @@ recipes:
 
 # Miscellaneous reagents
 
+  - name: Luminol
+    ingredients: 
+      - Oxygen
+      - Hydrogen
+      - Nitrogen
+      - Carbon
+    depletion_rate: 0.4
+    penetrates_skin: No
+    info:
+      notes: 5+ UNITS Shows blood stains that might have been removed. Useful for detectives!
+
   - name: Corn Starch
     sources:
       - Extracted from unmutated corn cobs.
@@ -2790,7 +2904,17 @@ recipes:
       depletion_rate: 0.4
       application_effect: 5+ UNITS = Temporarily creates slippery puddles of urine when applied to floor tiles.
 
+  - name: Chicken Soup
+    sources:
+      - Vending machines
+    info:
+      depletion_rate: 0.2
+      penetrates_skin: No
+      per_cycle: 10% chance each of curing the cold, the flu and food poisoning
+    tags: [medical, disease]
+     
   - name: Vomit (Green)
+
     sources:
       - Thrown up from slurrypod burst or ingestion.
     tags: [slippery]
@@ -2848,3 +2972,173 @@ recipes:
                           
                           INGEST - Provides nourishment for vampires.
       Per plant cycle: If plant is man-eater = +3 GROWTH
+
+#   Secret chemicals, does not show recipe and do not exist elsewhere in list
+
+  - name: Anima
+    sources:
+      - This recipe is secret!
+    tags: [secret, hallucinate]
+    info:
+      Components: 5
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: What's happening to the objects? Take this into consideration.
+      Described effect: Brings inanimate objects to life to attack people, gives odd visions when injected.
+      notes: The bigger the object you animate, the more health it has and damage it does, though smaller objects can be harder to click. What Anima actually affects is a bit all over the place, but if it can be dragged, assume it can be animated. The means for mixing this are nonstandard and guaranteed to be harmful, be advised!
+      
+  - name: Booster Enzyme
+    sources:
+      - This recipe is secret!
+    tags: [secret, medical]
+    info:
+      Components: 7
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Do a little research on real life enzymes
+      Described effect: Duplicates certain beneficial chemicals in your bloodstream.
+      notes: Each time booster enzyme decays, it will create 2 units of any beneficial medical chem that's already in your body up to a cap of 20 - note that this does not proc overdose thresholds of 20 or higher (but it will for lower thresholds!). A neat tool for farming rarer medicinal reagents, or for making you nigh-immortal with said reagents. 
+
+  - name: Silver Fulminate
+    sources:
+      - This recipe is secret!
+    tags: [secret]
+    info:
+      Components: unknown
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Not a secret chem itself but shares a few precursors for a real secret chem. 
+      Described effect: Plays a pop-like gunshot sound similar to a revolver firing, loudness scales with volume
+
+  - name: Enriched MSG
+    sources:
+      - This recipe is secret!
+    tags: [secret, heal]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Think of really tasty things.
+      Described effect: Heals 1 OXY/TOX/LOSEBREATH and 3 BRUTE/BURN per cycle.
+      Components: 12
+      notes: Pretty much super-omnizine, with more addiction and custom flavor texts if you overdose. Far and away the best healing chem in the game short of stimulants. 
+
+  - name: Fermid
+    sources:
+      - This recipe is secret!
+    tags: [secret]
+    info:
+      Components: 4
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Consider the name "fermid" and what a fermid looks like.
+      Described effect: Creates a hostile fermid at the point of reaction.
+      notes: Fermids are the nasty critters that plagued the (now removed) mining z-level, being stubbornly durable and injecting any human they see with harmful toxins; fortunately they cannot target cyborgs. The recipe used to be laughably easy, but after seeing the harm spontaneous fermid swarms could cause, it was wisely made more difficult and thrown into secrets section. DO NOT SPAM THESE AS A NON-ANTAGONIST.
+
+  - name: Initrobeedril
+    sources:
+      - This recipe is secret!
+    tags: [secret]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: The name is a strong hint in and of itself. Notably, this is not found in poison bottles like its bigger cousin.
+      Described effect: Turns your heart into a memorial bee and makes it fly away.
+      Components: 4
+      notes: You'll know if someone was hit by this if they start turning yellow. For the victim, they'll get big red messages of their heart fluttering in their chest. This is a disease reagent, so it only needs to be in you a certain amount of cycles to infect you, which will eventually lead to the heart-bee evicting itself from your body and leave you with cardiac abscondment. Despite the description, you cannot get the bee back in your body.
+
+  - name: Triple Meth
+    sources:
+      - This recipe is secret!
+    tags: [secret, drug, addictive]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Requires methamphetamine, obviously. The challenge is figuring out what to do with it.
+      Described effect: Makes you unstunnable, very robust, and very dizzy.
+      Components: 1
+      notes: Taking this will cause your stamina regeneration to rise to obscene levels. The movement confusion can be limiting, but otherwise there is no better drug for laughing off stuns and stamina loss, and the added movement speed makes you pretty hard to click. Addictive. Has a secret use. 
+
+  - name: Rotting
+    sources:
+      - This recipe is secret!
+    tags: [secret]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Think of horrible food and something else unpleasant.
+      Described effect: Infects the victim with tissue necrosis.
+      Components: 4
+      notes: Gradually turns you into a spooky skeleton, but is otherwise completely harmless. Good for... well, playing dead, if you want to use it that way. 
+
+  - name: Voltagen
+    sources:
+      - This recipe is secret!
+    tags: [secret]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Think about stuff that could be used to produce power.
+      Described effect: Randomly targets nearby mobs with arc flashes when in the bloodstream (consuming every remaining unit) or instantly if mixed without stabilizing agent.
+      Components: 4(+ Stabilizer)
+      notes: Found in shock grenades and just as useful for crowd control. Arc flashes will stun and damage anyone who aren't wearing insulated gloves, so if you can nab a pair, popping a pill of this can give you a huge advantage when fighting another player.
+
+  - name: Energy Drink
+    sources:
+      - This recipe is secret!
+    tags: [secret, overdose]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: If you can figure out voltagen, the remaining two ingredients should be quite obvious.
+      Described effect: Stun reduction, minor stamina regeneration buff, speed boost, chance to cause jitteriness. Overdose may cause cardiac failure. May cause various bad effects on depletion
+      Components: 3
+      notes: Basically the energy drink from the future, with just as mean of a crash. Despite this it's a welcome alternative to methamphetamine since it has next-to-none of its cons... just don't overdose on it. Addictive. 
+
+  - name: Nitroglycerin
+    sources:
+      - This recipe is secret!
+    tags: [secret, explode]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Do some research on real nitroglycerin.
+      Described effect: Liquid explosive with an incredibly foul temperament. The slightest jostle can set this stuff off, with its power ranging from minor to vicious depending on the reagent volume. Woe betide anyone who gets too much of it in their bloodstream, as any subsequent attack will instantly gib them in a violent blast!
+      Components: 3
+      notes: Don't try to use it in smoke or foam. Bad things happen.
+
+  - name: Quark-gluon Plasma (QGP)
+    sources:
+      - This recipe is secret!
+    tags: [secret, explode]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Ahaha, no. There will be no hints given for this abomination. You're on your own.
+      Described effect: Gibs any people it touches, destroys most items and critters it touches, deletes walls and floors on contact.
+      Components: I have no clue.
+      notes: Just to prove that there's no such thing as overkill in SS13. QGP is pure liquid destruction, it comes into existence as a massive sea of foam that obliterates anything in its path - people, Pods, critters, floors and walls, you name it. DO NOT EVER USE THIS AS A NON-ANTAGONIST ON THE STATION Z-LEVEL.
+
+  - name: Glowing Fliptonium
+    sources:
+      - This recipe is secret!
+    tags: [secret, explode]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: One of the ingredients is fliptonium! The other four make it glow, make it more powerful, and a little bit trippy and spooky.
+      Described effect: Works like regular fliptonium, with the exception that it affects mobs, objects and turfs on application, as opposed to just mobs and objects. It also gives more stun resistance/stamina buff/etc than normal fliptonium.
+      Components: 3
+      notes: The recipe is intended to be difficult to make, not to figure out, really. The effect is pretty crazy and does far more to interrupt peoples' rounds than, say, colorful reagent or glitter. 
