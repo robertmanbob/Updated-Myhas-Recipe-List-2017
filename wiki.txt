@@ -1,29 +1,30 @@
 #ROBERT CHANGE LOG 6/17/17
-#todo - Add "Secret!" source to all secret chems so people don't think it's unobtainable + add hints provided by Wiki
-#Finished doing that ^^^
 #
-#Add chicken soup - From vendors
-#Add Filgrastim - Blood + Stable Mutagen + Spaceacillin + E.Coli OR Medical Vendors
-#Add Heparin - Sugar + Meat Slurry + Phenol + Sulfuric Acid OR Medical Vendors
-#Add Mugwort Tea - Wizard Shuttles
-#Add Proconvertin - Blood + Stable Mutagen + Mannitol + Salt OR Medical Vendors
+#Added chicken soup - From vendors
+#Added Filgrastim - Blood + Stable Mutagen + Spaceacillin + E.Coli OR Medical Vendors
+#Added Heparin - Sugar + Meat Slurry + Phenol + Sulfuric Acid OR Medical Vendors
+#Added Mugwort Tea - Wizard Shuttles
+#Added Proconvertin - Blood + Stable Mutagen + Mannitol + Salt OR Medical Vendors
 #Change Venom - Add insect stings to sources
-#Add E.Coli - Compost + Bacterial Medium
+#Added E.Coli - Compost + Bacterial Medium
 #Change Fluorosulfuric Acid to fluorosulfuric acid as it is in-game
 #Change Sulfuric Acid to Sulfuric acid as it is in-game
-#Add Silver Fulminate - Secret!
-#Add Luminol - Oxygen + Hydrogen + Nitrogen + Carbon OR Detective's spray gun
-#Add Anima - Secret!
-#Add Booster Enzyme - Secret!
-#Add Enriched MSG - Secret!
-#Add Fermid - Secret!
-#Add Triple Meth - Secret!
-#Add Rotting - Secret!
-#Add Voltagen - Secret!
-#Add Energy Drink - Secret!
-#Add Nitroglycerin - Secret!
-#Add Quark-gluon Plasma - Secret!
-#Add Glowing Fliptonium - Secret!
+#Added Silver Fulminate - Secret!
+#Added Luminol - Oxygen + Hydrogen + Nitrogen + Carbon OR Detective's spray gun
+#Added Anima - Secret!
+#Added Booster Enzyme - Secret!
+#Added Enriched MSG - Secret!
+#Added Fermid - Secret!
+#Added Triple Meth - Secret!
+#Added Rotting - Secret!
+#Added Voltagen - Secret!
+#Added Energy Drink - Secret!
+#Added Nitroglycerin - Secret!
+#Added Quark-gluon Plasma - Secret!
+#Added Glowing Fliptonium - Secret!
+#
+# GitHub Contributors:
+# No one, yet.
 #
 #Description after this line is untouched.
 # =====================================================================
