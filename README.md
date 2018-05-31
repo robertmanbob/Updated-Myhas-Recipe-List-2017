@@ -6,6 +6,6 @@ Anyone is free to update the recipe list, provided they follow the format and th
 2. On top of above, don't make up your own secret hints. Use the wiki's.
 3. Don't include precursors for secret recipes unless they are already on the wiki.
 
-Anyone who contributes to the list in any way (even if it's a small misspelling error) will be memorialized in the contributors list. It's obviously a big deal.
+Anyone who contributes to the list in any way (even if it's a small misspelling error correction) will be memorialized in the contributors list. It's obviously a big deal.
 
 Also I am terrible at github
