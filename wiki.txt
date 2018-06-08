@@ -1,27 +1,3 @@
-#ROBERT CHANGE LOG 6/17/17
-#
-#Added chicken soup - From vendors
-#Added Filgrastim - Blood + Stable Mutagen + Spaceacillin + E.Coli OR Medical Vendors
-#Added Heparin - Sugar + Meat Slurry + Phenol + Sulfuric Acid OR Medical Vendors
-#Added Mugwort Tea - Wizard Shuttles
-#Added Proconvertin - Blood + Stable Mutagen + Mannitol + Salt OR Medical Vendors
-#Change Venom - Add insect stings to sources
-#Added E.Coli - Compost + Bacterial Medium
-#Change Fluorosulfuric Acid to fluorosulfuric acid as it is in-game
-#Change Sulfuric Acid to Sulfuric acid as it is in-game
-#Added Silver Fulminate - Secret!
-#Added Luminol - Oxygen + Hydrogen + Nitrogen + Carbon OR Detective's spray gun
-#Added Anima - Secret!
-#Added Booster Enzyme - Secret!
-#Added Enriched MSG - Secret!
-#Added Fermid - Secret!
-#Added Triple Meth - Secret!
-#Added Rotting - Secret!
-#Added Voltagen - Secret!
-#Added Energy Drink - Secret!
-#Added Nitroglycerin - Secret!
-#Added Quark-gluon Plasma - Secret!
-#Added Glowing Fliptonium - Secret!
 #
 # GitHub Contributors:
 # No one, yet.
