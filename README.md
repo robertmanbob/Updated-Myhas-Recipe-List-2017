@@ -1,4 +1,4 @@
-# Updated Myhas Recipe List 2017
+# Updated Myhas Recipe List 2017/2018
 Use with https://github.com/myshak/ss13recipemanager 
 
 Anyone is free to update the recipe list, provided they follow the format and these rules:
