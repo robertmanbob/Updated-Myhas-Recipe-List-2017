@@ -1588,7 +1588,7 @@ recipes:
   - name: Initropidril
     sources:
       - Poison bottles.
-    tags: [stamina, stun, damage, tox, oxy, losebreath, heart]
+    tags: [stamina, stun, damage, tox, oxy, losebreath, heart, secret]
     reaction_message: A sweet and sugary scent drifts from the unpleasant milky substance.
     info:
       depletion_rate: 0.4
@@ -1597,6 +1597,10 @@ recipes:
                  Major stamina regeneration buff. 33% chance of medium-duration stun OR up to +25 TOX. 
                  10% of +10 OXY and +1 LOSEBREATH OR immediate cardiac arrest.
       notes: RNG-based poison, can either kill you ridiculously fast or agonizingly slowly.
+      Hint: A blend of things that are mostly bad for your heart, plus a couple of things to help the medicine go down...
+      Described effect: Major stamina regeneration buff. 33% chance of medium-duration stun OR up to +25 TOX. 10% of +10 OXY and +1 LOSEBREATH OR immediate cardiac arrest.
+      Components: 10
+
 
   - name: Initrobeedril (Royal)
     sources:
@@ -2138,6 +2142,19 @@ recipes:
       ignition_temp: Instant (stabilizer = 374 K)
       Ignition effect: Stuns anyone within five tiles of the source and causes blurred vision (blocked by sunglasses etc), stun amount relative to distance. Can cause permanent eye damage and blindness.
       notes: Flashbangs contain this.
+  - name: Dioxygen Difluoride (FOOF)
+    unsorted: true
+    sources:
+      - Rare find in artifact beakers
+    tags: [ignite]
+    info:
+      depletion_rate: 0.4
+      per_cycle: +50 BURNING
+      penetrates_skin: No
+      ignition_temp: N/A
+      Ignition effect: N/A (oxidizer, breaks down and makes certain things instantly ignite when it's out of its container) 
+      Application Effect: Creates a super-hot fireball (up to 8x8, scales with volume) that ignites and melts through walls, floors, grilles, and windows alike.
+      notes: Horrifying and thankfully rare hellchem with a funny name. 
       
   - name: Sonic Powder (Hootingium)
     unsorted: true
@@ -2281,10 +2298,10 @@ recipes:
     info:
       ignition_temp: Instant
       Ignition effect: Small explosion (4x4, low severity). Does not scale with volume.
-      notes: |
-             Dumping too many basic chems into a container might accidentally cause this unstable and highly explosive reaction. 
-             The explosion from this can destroy objects like the chem dispenser you make it from. The explosion is not prevented by stabilizing agent.
-
+      Hint: How is chlorine azide basically made in real life? 
+      Described effect: Explodes the moment it's created, stabilizing agent or not. It won't breach through the floor or blow down a wall, but it can certainly take out the chem dispenser.
+      Components: 6
+      notes: There's a reason the code for its recipe has the comment "death 2 chemists" (in the 2016 public release, at least). You might stumble upon it accidentally when mixing lots of random basic chems together. 
   - name: Magnesium Explosion
     tags: [explode]
     ingredients:
@@ -2769,6 +2786,8 @@ recipes:
                   OVERDOSE - 8% chance of +1/+2 TOX.
 
   - name: Fartonium
+    sources:
+      - Extracted from assburgers.
     ingredients:
       - Refried beans
       - Egg
@@ -2821,6 +2840,7 @@ recipes:
     reaction_message: .ylegnarts dnuora lriws ot snigeb erutxim ehT
     info:
       notes: Harmless fun. The duration can't be extended by having excess reversium in your bloodstream, so you only need to consume a tiny quantity every three minutes. 
+      hint:	One screws with your sprite, one screws with your DNA, one screws with your sprite and DNA, and one...is friendship?
       depletion_rate: 0.4
       penetrates_skin: No
       application_effect: TOUCH and INGEST - See per life cyle.
@@ -2836,6 +2856,15 @@ recipes:
       depletion_rate: 0.4
       penetrates_skin: No
       notes: Inert precursor reagent.
+
+  - name: Pure Love
+    ingredients:
+      - Chocolate
+      - Pure Hugs
+    info:
+      depletion_rate: 0.4
+      penetrates_skin: No
+      notes: Sets your intent to HELP intent if you were on HARM intent, gives you feel-good messages, and makes you semi-awkwardly *hug people next to you.
 
 # Miscellaneous reagents
 
@@ -2864,6 +2893,23 @@ recipes:
       depletion_rate: 0.4
       application_effect: INGEST - 50% chance of contracting food poisoning, 10% of up to 5 units of toxin (reagent).
       notes: Space fungus is acquired by scraping it off of walls with your beaker. It mostly grows in maintenance tunnels, so you might need to request appropriate access to get at it.
+
+
+  - name: Pure Hugs
+    sources:
+      - Hug an cute and adorable friend and get hugged back. 
+    info:
+      depletion_rate: 0.4
+      penetrates_skin: No
+      notes: D'awwww
+
+  - name: Sewage
+    sources:
+      - Put Discount Dan's into a still
+    info:
+      depletion_rate: 0.4
+      penetrates_skin: No
+      notes: 7% chance of 1 TOX damage. Vomit on TOUCH/INGEST.
 
   - name: Egg
     sources:
@@ -3011,8 +3057,9 @@ recipes:
       depletion_rate: unknown
       penetrates_skin: unknown
       per_cycle: unknown
-      Hint: Not a secret chem itself but shares a few precursors for a real secret chem. 
-      Described effect: Plays a pop-like gunshot sound similar to a revolver firing, loudness scales with volume
+      Hint: It's just like making silver fulminate in real life.
+      Described effect: Ridiculously sensitive gimmick chem that makes a gunshot-like pop when it's set off. It's even more sensitive than nitroglycerin; at least nitro doesn't explode under the weight of other nitro molecules. 
+      notes: Like spiders, it's not quite a secret chem in of itself, but it uses many of the same precursors to one. 
 
   - name: Enriched MSG
     sources:
@@ -3143,3 +3190,27 @@ recipes:
       Described effect: Works like regular fliptonium, with the exception that it affects mobs, objects and turfs on application, as opposed to just mobs and objects. It also gives more stun resistance/stamina buff/etc than normal fliptonium.
       Components: 3
       notes: The recipe is intended to be difficult to make, not to figure out, really. The effect is pretty crazy and does far more to interrupt peoples' rounds than, say, colorful reagent or glitter. 
+  - name: Hootagen
+    sources:
+      - This recipe is secret!
+    tags: [secret]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Do some research on real owls... no, I'm just messing.
+      Described effect: Has a stable and unstable variant. The stable one gives you an owl suit and mask that you can't take off yourself. The unstable one... well, it's a little more violent.
+      Components: 6 / 6
+      notes: The unstable variant has some utility as a pseudo-deathchem. Also, owl masks don't work as internals. Use that as you will. 
+  - name: Freeze
+    sources:
+      - This recipe is secret!
+    tags: [secret]
+    info:
+      depletion_rate: unknown
+      penetrates_skin: unknown
+      per_cycle: unknown
+      Hint: Cold chems. What makes you freeze?
+      Described effect: Decays into ethanol. Lowers your body temperature and inflicts brief stuns and burn damage. Severe effect scales with volume [0.1% * volume] chance of being turned into an ice statue.
+      Components: 5
+      notes: Functionally the same as Dragon's Breath, but it freezes you to death instead of frying you. 
