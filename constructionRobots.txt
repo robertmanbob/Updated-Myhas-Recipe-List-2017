@@ -1,0 +1,421 @@
+# List of most public construction recipes for mysha's recipe manager.
+# split off by: The Grim Sleeper
+# from "Construction.txt" by: Mysha, updated and restructured by Convair880/Pistoleer
+
+# Structure:
+# - Cyborgs
+# - Robots
+#
+# Special tags:
+# [robot] It's a robot or cyborg.
+
+
+name: Construction (Robots)
+recipes:
+
+# Cyborgs
+
+  - name: Cyborg frame
+    tags: []
+    info:
+      notes: Available from robotics manufacturers. Traitors can order Syndicate frames with hacked laws.
+
+  - name: Cyborg head (Light)
+    tags: []
+    info:
+      notes: Available from robotics manufacturers. Cannot be reinforced.
+
+  - name: Cyborg head (Standard)
+    tags: []
+    info:
+      notes: Available from robotics manufacturers.
+
+  - name: Cyborg chest (Light)
+    tags: []
+    info:
+      notes: Available from robotics manufacturers. Cannot be reinforced.
+
+  - name: Cyborg chest (Standard)
+    tags: []
+    info:
+      notes: Available from robotics manufacturers. Cannot be reinforced.
+
+  - name: Cyborg arm (Light)
+    tags: []
+    info:
+      notes: Available from robotics manufacturers. Cannot be reinforced.
+
+  - name: Cyborg arm (Standard)
+    tags: []
+    info:
+      notes: Available from robotics manufacturers.
+
+  - name: Cyborg leg (Light)
+    tags: []
+    info:
+      notes: Available from robotics manufacturers. Cannot be reinforced.
+
+  - name: Cyborg leg (Standard)
+    tags: []
+    info:
+      notes: Available from robotics manufacturers. Cannot be reinforced.
+
+  - name: Cyborg treads
+    tags: []
+    info:
+      notes: Available from robotics manufacturers, which provide treads in pairs (left and right). Cannot be reinforced.
+
+  - name: Cyborg head (Sturdy)
+    tags: [make, robot]
+    ingredients:
+      - Cyborg head (Standard)
+      - <Metal Sheet> (Steel)
+      - !step Use two metal sheets on the cyborg head.
+    info:
+      notes: At the moment, steel is the only suitable material.
+
+  - name: Cyborg head (Heavy)
+    tags: [make, robot]
+    ingredients:
+      - Cyborg head (Sturdy)
+      - <Metal Sheet, reinforced> (Steel)
+      - !step Use two reinforced metal sheets on the cyborg head.
+    info:
+      notes: At the moment, steel is the only suitable material.
+
+  - name: Cyborg arm (Sturdy)
+    tags: [make, robot]
+    ingredients:
+      - Cyborg arm (Standard)
+      - <Metal Sheet> (Steel)
+      - !step Use two metal sheets on the cyborg arm.
+    info:
+      notes: At the moment, steel is the only suitable material.
+
+  - name: Cyborg arm (Heavy)
+    tags: [make, robot]
+    ingredients:
+      - Cyborg arm (Sturdy)
+      - <Metal Sheet, reinforced> (Steel)
+      - !step Use two reinforced metal sheets on the cyborg arm.
+    info:
+      notes: At the moment, steel is the only suitable material.
+
+  - name: Cyborg
+    unsorted: true
+    tags: [make, robot]
+    ingredients:
+      - Cyborg frame
+      - Cyborg head (any type)
+      - Cyborg chest (any type)
+      - Cyborg arm, left and right (any type)
+      - <Cyborg treads> OR Cyborg leg, left and right (any type)
+      - Charged <Power Cell>
+      - <Brain> OR <AI interface board>
+      - Wire
+      - Wrench
+      - !step Insert the power cell into the cyborg chest.
+      - !step Use the cable coil on the cyborg chest.
+      - !step Attach the cyborg chest to the frame.
+      - !step Attach the arms and legs (or treads) to the frame.
+      - !step Insert the brain or interface board into the cyborg head.
+      - !step Attach the cyborg head to the frame.
+      - !step Optionally, the wrench can be used to partially disassemble frames. See notes.
+      - !step To activate the cyborg, click on the finished frame with the wrench.
+    info:
+      notes: |
+             Cyborg parts are classified as light, standard, sturdy or heavy. Durability increases with heavier parts, but mobility decreases. Overweight cyborgs will also use slightly more power.
+             
+             For the most part, the game will prevent you from inserting unsuitable (job-banned etc.) brains automatically. If you use an AI interface board instead of a brain, the AI will be able to assume control of the cyborg body at will.
+             
+             Remove limbs: use the wrench on the frame, then select the appropriate cyborg part.
+             Remove brain: detach the cyborg head first, then click on it with the wrench.
+
+  - name: Cyborg, brain replacement (fix)
+    unsorted: true
+    tags: [fix, robot]
+    ingredients:
+      - Cyborg
+      - Brain
+      - ID card with robotics access
+      - Screwdriver
+      - !step Unlock the cyborg's interface with the ID card.
+      - !step Open its head compartment with the screwdriver.
+      - !step Click on the cyborg with an empty hand to remove the brain.
+      - !step Insert the replacement brain.
+      - !step Close the head compartment with the screwdriver.
+      - !step Lock the cyborg's interface with the ID card.
+    info:
+      notes: For the most part, the game will prevent you from inserting unsuitable (job-banned etc.) brains automatically.
+
+  - name: Cyborg, limb replacement (fix)
+    unsorted: true
+    tags: [fix, robot]
+    ingredients:
+      - Cyborg
+      - Cyborg arm, left and right (any type)
+      - <Cyborg treads> OR Cyborg leg, left and right (any type)
+      - ID card with robotics access
+      - Crowbar
+      - Screwdriver
+      - Wrench
+      - !step Unlock the cyborg's interface with the ID card.
+      - !step Open its cover with the crowbar.
+      - !step Expose the wires with the screwdriver.
+      - !step Optionally, use the wrench and select the appropriate cyborg part to remove.
+      - !step Attach the missing arms or legs to the cyborg.
+      - !step Secure the wiring with the screwdriver.
+      - !step Close the cover with the crowbar.
+      - !step Lock the cyborg's interface with the ID card.
+    info:
+      notes: |
+             Cyborg parts are classified as light, standard, sturdy or heavy. Durability increases with heavier parts, but mobility decreases. Overweight cyborgs will also use slightly more power.
+
+  - name: Cyborg, brute damage (fix)
+    tags: [fix, robot]
+    ingredients:
+      - Cyborg
+      - Welder
+      - !step Use the welder on the cyborg; several times if necessary.
+    info:
+      notes: The 'Repair Structural Damage' function of docking stations does the same.
+
+  - name: Cyborg, burn damage (fix)
+    tags: [fix, robot]
+    ingredients:
+      - Cyborg
+      - ID card with robotics access
+      - Wire
+      - Crowbar
+      - Screwdriver
+      - !step Unlock the cyborg's interface with the ID card.
+      - !step Open its cover with the crowbar.
+      - !step Expose the wires with the screwdriver.
+      - !step Use the cable coil on the cyborg to repair its wiring.
+      - !step Secure the wiring with the screwdriver.
+      - !step Close the cover with the crowbar.
+      - !step Lock the cyborg's interface with the ID card.
+    info:
+      notes: The 'Repair Burn Damage' function of docking stations does the same.
+
+# Robots
+
+  - name: AI shell
+    unsorted: true
+    tags: [make, robot]
+    ingredients:
+      - AI shell frame
+      - Charged <Power Cell>
+      - AI interface board
+      - Metal Sheet
+      - Wire
+      - Station bounced radio
+      - Wrench
+      - !step Add some metal to the shell frame.
+      - !step Insert wires.
+      - !step Insert the shell power cell.
+      - !step Install the interface board.
+      - !step Use the radio on the shell frame.
+      - !step Activate the robot with the wrench.
+    info:
+      notes: These are simple robots used by the AI for reconnaissance or interacting directly with certain pieces of machinery, e.g. pods or manufacturers. Cyborg bodies can also be remote-controlled by the AI when equipped with an interface board instead of human brain.
+
+  - name: AI shell, brute damage (fix)
+    tags: [fix, robot]
+    ingredients:
+      - AI shell
+      - Welder
+      - !step Use the welder on the shell; several times if necessary.
+
+  - name: AI shell, burn damage (fix)
+    tags: [fix, robot]
+    ingredients:
+      - AI shell
+      - Wire
+      - !step Use the cable coil on the shell; several times if necessary.
+
+  - name: Medbot
+    unsorted: true
+    tags: [make, robot, heal]
+    ingredients:
+      - Empty <Medkit> (any colour)
+      - Proximity Sensor
+      - <Cyborg arm (Standard)> (left or right)
+      - Health analyzer
+      - <Pen> (optional)
+      - !step Use the cyborg arm on the empty medkit.
+      - !step Use the health analyzer on the resulting assembly.
+      - !step Optionally, you may use a pen to rename the finished robot.
+      - !step Use the proximity sensor to finish the robot. 
+    info:
+      notes: |
+             Medbots will detect nearby people and inject them with helpful drugs to slowly bring them back to health. They are a supplement to medical doctors, not a replacement. When emagged, the medbot will enthusiastically inject everyone with massive amounts of poison regardless of injury or not.
+             Medbots may also be produced outright at a robotics fabricator or ordered from the cargo bay.
+
+  - name: Floorbot
+    unsorted: true
+    tags: [make, robot, floor]
+    ingredients:
+      - Empty <Toolbox (Mechanical)>
+      - Proximity Sensor
+      - <Cyborg arm (Standard)> (left or right)
+      - Floor tile
+      - !step Use the floor tile on the empty toolbox.
+      - !step Use the proximity sensor to finish the robot. 
+      - !step Use the cyborg arm on the resulting assembly.
+    info:
+      notes: |
+              Floorbots will detect nearby areas of space and tirelessly use their very finite supply of floor tiles to turn it into walkable floors. When emagged, floorbots will rip up floors equally as tirelessly, quickly turning habitable parts of a station into cold, airless tombs. Floorbots may also be produced outright at a robotics fabricator (where they will spawn with 10 tiles) or ordered from the cargo bay.
+             
+              If you use more than 10 floor tiles, the finished floorbot will have however many you put in. If you use less than 10, the floorbot will have 10. Therefore, it is most efficient to use 1-2 in creation and load the rest after the floorbot is done.
+
+  - name: Firebot 
+    unsorted: true
+    tags: [make, robot, burning]
+    ingredients:
+      - Empty <Toolbox (Emergency)>
+      - Proximity Sensor
+      - <Cyborg arm (Standard)> (left or right)
+      - Fire extinguisher
+      - <Pen> (optional)
+      - !step Use the cyborg arm on the toolbox.
+      - !step Use the fire extinguisher on the resulting assembly.
+      - !step Optionally, you may use a pen to rename the finished robot.
+      - !step Use the proximity sensor to finish the robot. 
+    info:
+      notes: Firebots will detect nearby fires, whether on tiles or on people, and put them out. When emagged, firebots will ram anyone nearby, knocking them down with surprising efficiency. Firebots may also be produced outright at a robotics fabricator or ordered from the cargo bay.
+
+  - name: Cleanbot
+    unsorted: true
+    tags: [make, robot]
+    ingredients:
+      - Bucket
+      - Proximity Sensor
+      - <Cyborg arm (Standard)> (left or right)
+      - !step Use the sensor on the bucket.
+      - !step Use the cyborg arm on the resulting assembly. 
+    info:
+      notes: Cleanbots will clean the floor around them automatically. When emagged, cleanbots will apply space lube to as many nearby floors as they can. Cleanbots may also be produced outright at a robotics fabricator or ordered from the cargo bay.
+
+  - name: Securitron 
+    unsorted: true
+    tags: [make, robot, stun]
+    ingredients:
+      - Remote Signaler
+      - Security Helmet
+      - Proximity Sensor
+      - <Cyborg arm (Standard)> (left or right)
+      - Stun baton
+      - Screwdriver
+      - Welder
+      - <Pen> (optional)
+      - !step Use the screwdriver on the remote signaler.
+      - !step Use the signaler on the helmet.
+      - !step Weld them together with the welding tool.
+      - !step Add the proximity sensor to the assembly.
+      - !step Attach the cyborg arm to the assembly.
+      - !step Optionally, you may use a pen to rename the finished robot.
+      - !step Add the stun baton.
+    info:
+      notes: |
+             Securitrons network into the station's security computer, identify criminals, and arrest them. Securitrons may also be produced outright at a robotics fabricator or ordered from the cargo bay.
+             When emagged, securitrons arrest everyone they see. In addition, if emagged a second time, securitrons literally flip the fuck out, repeatedly stunning anyone that enters their sights.
+
+  - name: Guardbuddy
+    unsorted: true
+    tags: [make, robot, stun]
+    ingredients:
+      - Guardbuddy frame
+      - Guardbuddy mainboard
+      - <Guardbuddy tool module> (any)
+      - Charged <Power Cell>
+      - <Cyborg arm (Standard)> (left or right)
+      - <Pen> (optional)
+      - !step Insert the power cell into the frame.
+      - !step Insert the tool module.
+      - !step Optionally, you may use a pen on the mainboard to rename the finished robot.
+      - !step Insert the mainboard.
+      - !step Add the robot arm.
+    info:
+      notes: Utilizes the DWAINE terminals to conduct operations. To properly use them, one must manually enter commands via the DWAINE terminals in the research sector. Some modules can malfunction dangerously when exposed to EMP grenades.
+
+  - name: Buttbot
+    tags: [make, robot]
+    ingredients:
+      - Butt
+      - <Cyborg arm (Standard)> (left or right)
+      - !step Attach the cyborg arm to the butt.
+    info:
+      notes: Buttbots...should be seen instead of explained. When emagged, they produce an amazing amount of enjoyment to bystanders.
+
+  - name: Cambot
+    tags: [make, robot]
+    ingredients:
+      - Camera
+      - Proximity Sensor	  
+      - <Cyborg arm (Standard)> (left or right)
+      - !step Attach the cyborg arm to the camera.
+    info:
+      notes: Smile for the camera! Essentially slightly less annoying tourists, cambots leisurely roam around the station, occasionally taking pictures of just about anything they see. When emagged, their photographic flash works like an actual flash, stunning cyborgs and humans for quite some time. 
+
+  - name: Amusing duck
+    tags: [make, robot]
+    ingredients:
+      - Bike horn
+      - <Cyborg arm (Standard)> (left or right)
+      - !step Combine the bike horn with the robot arm.
+    info:
+      notes: |
+             Amusing ducks will slowly move around at random, quacking and emitting a playful jingle. They will occasionally lay eggs (similar, but not identical to Easter eggs), which in turn may contain fun items.
+             
+             When emagged, they lay eggs and quack more frequently. However, they will also play their jingle on dissonant chords, giving them a distinctly 'wrong' and slightly unsettling sound. Amusing ducks can be colossally annoying when a lot of them are stacked into a small area and can easily inspire some to violence to make the quacking stop.
+
+  - name: Chefbot
+    tags: [make, robot]
+    ingredients:
+      - Dramatic bike horn
+      - <Cyborg arm (Standard)> (left or right)
+      - !step Combine the dramatic bike horn with the robot arm.
+    info:
+      notes: The impartial judge of fine cuisine.
+
+  - name: Skullbot
+    tags: [make, robot]
+    ingredients:
+      - Skull
+      - <Cyborg leg (Standard)> (left or right)
+      - !step Attach the cyborg leg to the skull.
+    info:
+      notes: Spooky. When emagged, they provide a wide variety of skeleton puns.
+
+  - name: Mulebot (hack)
+    unsorted: true
+    tags: [hack, robot]
+    ingredients:
+      - Screwdriver
+      - Multitool
+      - Wirecutters
+      - !step Unlock the MULE's interface (QM access or EMAG required).
+      - !step Click 'Toggle Power' to switch off the MULE.
+      - !step Use the screwdriver to open the maintenance panel.
+      - !step Click on the MULE with an empty hand to access the hacking GUI.
+      - !step Pulse the wires with the multitool to figure out what they do.
+      - !step Cut the appropiate cables with the wirecutters.
+      - !step Close the maintenance panel with the screwdriver.
+      - !step Click 'Toggle Power' to switch on the MULE.
+      - !step Lock the MULE's interface with your ID card or EMAG.
+    info:
+      notes: |
+             Once you've opened the maintenance panel, pulse the wires to figure out their function and then bypass the safety by cutting the corresponding cables. They are randomized for every bot.
+             
+             Power cell = Click this with an empty hand to remove the cell for recharging or upgrading.
+             
+             You hear a radio crackle. = Leave those wires alone. Used for navigation and to interface with PDAs.
+             
+             The charge light flickers. =  Leave as is. Both wires need to be intact or the bot will be immobilized.
+             
+             The load platform clunks. =  Pointless. Out of the box, any type of cargo can be loaded onto the MULE now.
+             
+             The drive motor whines briefly. = Disables the speed limiter. Highly recommended, but make sure to only cut one of the two wires!
+             
+             The external warning lights flash briefly. = When cut, the machine will knock and run over anybody in its path. This wire has no impact as far as prone people are concerned, as the MULE never tries to avoid them.
